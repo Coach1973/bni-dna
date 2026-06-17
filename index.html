@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大台南南區 DnA 團隊戰情儀表板</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --panel-bg: #1a2333;
+            --text-main: #e2e8f0;
+            --text-muted: #64748b;
+            --neon-blue: #00f0ff;
+            --neon-green: #10b981;
+            --neon-red: #ff2a2a;
+            --neon-gold: #f59e0b;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--neon-blue);
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .table-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            background: var(--panel-bg);
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
+            overflow: hidden;
+            border: 1px solid #2d3748;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        thead {
+            background: #0f172a;
+            border-bottom: 2px solid var(--neon-blue);
+        }
+
+        th {
+            padding: 18px 15px;
+            color: var(--neon-blue);
+            font-weight: 600;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #2d3748;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: rgba(0, 240, 255, 0.05);
+        }
+
+        .divider-row td {
+            background: #0f172a;
+            color: var(--neon-gold);
+            font-weight: bold;
+            letter-spacing: 2px;
+            padding: 12px;
+            font-size: 0.9rem;
+            text-align: left;
+            padding-left: 30px;
+            border-top: 2px dashed #475569;
+            border-bottom: 2px dashed #475569;
+        }
+
+        .present {
+            color: var(--neon-green);
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+        }
+
+        .absent {
+            color: var(--neon-red);
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(255, 42, 42, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        .null-data {
+            color: #475569;
+        }
+
+        .total-score {
+            color: var(--neon-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
+        }
+
+        .rank {
+            color: #94a3b8;
+            font-weight: bold;
+        }
+
+        .name {
+            font-weight: bold;
+            color: #fff;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <h1>DnA 團隊戰情儀表板</h1>
+        <p class="subtitle">2026 上半年 出缺席樞紐分析 (1月 - 6月) - 頂級校正版</p>
+    </div>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>排名</th>
+                    <th style="text-align: left; padding-left: 20px;">夥伴姓名</th>
+                    <th>1月 (1/14)</th>
+                    <th>2月 (2/11)</th>
+                    <th>3月 (3/13)</th>
+                    <th>4月 (4/8)</th>
+                    <th>5月 (5/13)</th>
+                    <th>6月 (6/12)</th>
+                    <th>總出席</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rank">1</td><td class="name">陳佩君</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">6 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">2</td><td class="name">林佳伶</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">6 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">3</td><td class="name">郭政輝</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">6 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">4</td><td class="name">邱南寅</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">6 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">5</td><td class="name">李孟哲</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">6 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">6</td><td class="name">傅恩平</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">6 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">7</td><td class="name">柯朝陽</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">6 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">8</td><td class="name">顏淳峯</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">5 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">9</td><td class="name">蔡丞弘</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td>
+                    <td class="total-score">5 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">10</td><td class="name">楊仁豪</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td><td class="present">出席</td>
+                    <td class="total-score">5 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">11</td><td class="name">許朝竣</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td>
+                    <td class="total-score">5 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">12</td><td class="name">楊尚儒</td>
+                    <td class="absent">缺席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">5 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">13</td><td class="name">羅琳</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">5 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">14</td><td class="name">朱正文</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td>
+                    <td class="total-score">5 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">15</td><td class="name">謝緯翔</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">5 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">16</td><td class="name">康文彬</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td><td class="absent">缺席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">4 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">17</td><td class="name">莊弼翔</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td><td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td>
+                    <td class="total-score">4 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">18</td><td class="name">張騰文</td>
+                    <td class="present">出席</td><td class="absent">缺席</td><td class="absent">缺席</td><td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td>
+                    <td class="total-score">3 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">19</td><td class="name">鄭綉美</td>
+                    <td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td><td class="present">出席</td><td class="absent">缺席</td><td class="absent">缺席</td>
+                    <td class="total-score">3 次</td>
+                </tr>
+
+                <tr class="divider-row">
+                    <td colspan="9">⚡ 2月份入隊生力軍 ⚡</td>
+                </tr>
+
+                <tr>
+                    <td class="rank">20</td><td class="name">王彤</td>
+                    <td class="null-data">-</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">5 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">21</td><td class="name">楊在珍</td>
+                    <td class="null-data">-</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">5 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">22</td><td class="name">張敬雍</td>
+                    <td class="null-data">-</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">5 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">23</td><td class="name">陳欣佑</td>
+                    <td class="null-data">-</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td><td class="absent">缺席</td>
+                    <td class="total-score">4 次</td>
+                </tr>
+                <tr>
+                    <td class="rank">24</td><td class="name">張羽家</td>
+                    <td class="null-data">-</td><td class="present">出席</td><td class="absent">缺席</td><td class="present">出席</td><td class="present">出席</td><td class="present">出席</td>
+                    <td class="total-score">4 次</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
