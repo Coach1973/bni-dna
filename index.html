@@ -54,8 +54,13 @@
             background: var(--panel-bg);
             border-radius: 12px;
             box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
-            overflow: hidden;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             border: 1px solid #2d3748;
+        }
+
+        .table-wrapper table {
+            min-width: 720px;
         }
 
         table {
@@ -141,6 +146,30 @@
             0% { opacity: 1; }
             50% { opacity: 0.7; }
             100% { opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 8px;
+            }
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+            p.subtitle {
+                font-size: 0.9rem;
+            }
+            th, td {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+            td.name {
+                padding-left: 10px;
+            }
+            .divider-row td {
+                padding-left: 14px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
